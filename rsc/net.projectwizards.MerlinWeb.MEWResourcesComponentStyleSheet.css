@@ -1,0 +1,9 @@
+
+.scrollview.outlineview.resourcesgroups td {
+	border-right: 0px;
+}
+
+
+.resourcesgroups tr {
+	background-color: transparent !important;
+}

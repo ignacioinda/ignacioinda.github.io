@@ -1,0 +1,820 @@
+
+
+.timeScale {
+
+    min-width: 100%;
+    position: relative;
+
+}
+
+.timeScale .tier {
+    border-bottom: 1px solid #9B9B9B;	
+    overflow: hidden;
+    position: relative;
+}
+
+.timeScale .tier .cell {
+
+	
+    -moz-box-sizing: border-box;	 
+    box-sizing: border-box;
+    border-right: 1px solid #9B9B9B; 
+    position: absolute;
+    text-align: center;
+    overflow:hidden;
+}
+
+.timeScale .tier .cell.nonworking {
+    background-color: rgba(60%, 60%, 60%, 0.25);
+}
+
+.timeScale .tier.first .cell {
+    border-top: 1px solid white;	
+}
+
+
+.timeScale .measuring {
+	width: 0px;
+	float: left;	
+}
+
+.timeScale .measuring .tier {
+	visibility:hidden;
+}
+
+.timeScale .measuring .tier .cell {
+    
+    position: relative;
+
+    
+    height: auto;
+	float: left;
+}
+
+
+
+.invisible {
+    visibility: hidden;
+}
+
+.invisibleText {
+    visibility: hidden;
+}
+
+.invisibleText:after {
+    content:"Mgj";
+}
+
+
+.innerGanttCell {
+    position:relative;
+}
+
+
+.posAnchor {
+	width: 100%; 
+    position: relative;
+
+
+}
+
+
+
+.gantt,
+.labelView{
+
+	z-index: 0;	
+    overflow-x: hidden;
+    min-width: 100%;
+
+    
+    background-color: rgba(251, 251, 251, 1.0);
+    position:relative;
+}
+
+.gantt table {
+	border-spacing: 0px;
+	border-collapse:separate;
+	table-layout: fixed;
+}
+
+.gantt table td {
+    padding: 0px;
+    vertical-align: middle;
+}
+
+
+
+.gantt .label{
+    white-space:nowrap;
+    overflow: visible;
+
+}
+
+.gantt .middleLabel {
+	padding-left: 2px;
+    text-overflow:clip;
+	white-space:nowrap;
+	overflow: visible;
+}
+
+.gantt .leftLabel {
+	text-align: right;
+	padding-right: 15px;	
+	direction: rtl;
+    text-overflow:clip;
+	overflow: visible;
+    display: inline-block;
+}
+
+.gantt .rightLabel {
+	text-align: left;
+	padding-left: 15px;
+    text-overflow:clip;
+	overflow: visible;
+    display: inline-block;
+}
+
+.gantt .bar .completed .middleLabel {
+	color: white !important;
+}
+
+.gantt .barContainer {
+	table-layout: fixed;
+	border-spacing: 0px;
+	padding-top: 3px;	
+	padding-bottom: 3px;
+
+    
+    width:100%;
+
+    position: relative;
+    padding-bottom: 3px;
+    z-index: 100;				    
+}
+
+.gantt .bar {	
+    min-height:0 !important; 
+    position: relative;
+	padding: 0px;
+	border-style: solid;
+	border-radius: 3px;
+	border-width: 1px;
+    border-color: currentColor;
+	overflow: hidden;
+	width: 100px;
+    background-repeat:no-repeat;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.gantt .referenceBar {
+    background-repeat:no-repeat;
+}
+
+.gantt .bar .completed {
+	position: absolute;
+	top: 0px;
+	height: 100%;
+	overflow: hidden;
+    background-color: currentColor;
+}
+
+
+.gantt .bar .completed.fully {
+    overflow:visible;
+}
+
+.gantt .bar .completed.fully::after {
+    content:    "";
+    position: absolute;
+    display: block;
+    width:0.43em;
+    height:100%;
+    top:0px;
+    right:-0.43em;
+    background-color:currentColor;
+    background-image:inherit;
+}
+
+
+.gantt .beam.row td{
+	display: inline-block;	
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.gantt .barContainer.overlapping {
+	padding-bottom: 7px;            
+}
+
+.gantt .barContainer.secondary {
+	padding-top: 3px;
+	padding-bottom: 0px;
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	z-index: 0;	
+}	
+
+.gantt .barContainer.secondary.overlapping {
+	padding-top: 7px;               
+}
+
+
+.gantt .beam.row .barContainer.secondary .bar {
+	background-image: none !important;
+	filter: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    border:none !important;
+    overflow:visible !important;
+}
+
+.gantt .beam.row .barContainer.secondary .bar .referenceBar {
+    border: 1px solid currentColor;
+    border-radius: 3px;
+}
+
+.gantt .beam.row .barContainer.secondary .bar .label .middleLabel {
+	visibility:hidden;
+}
+
+.gantt .beam.row .barContainer .label .leftLabel span {
+	visibility:hidden;
+}
+
+.gantt .beam.row .barContainer.secondary .label .leftLabel span {
+	visibility:visible;
+}
+
+.gantt .beam.row .barContainer .label .rightLabel span {
+	visibility:visible;
+}
+
+.gantt .beam.row .barContainer.secondary .label .rightLabel span {
+	visibility: hidden;
+}
+
+.gantt .rows {
+	min-width: 100%;
+}
+
+.gantt .rows .row:nth-child(odd){
+	background-image: 0;
+}
+
+.gantt .rows .row:nth-child(even){
+	background-image: 0;
+}
+
+.gantt .rows .otherTableRowDiv {
+    width: 0px;
+}
+
+
+
+
+.gantt .group.row .barContainer{
+	position: relative;	
+	border-collapse: separate;
+	border-spacing: 0px;
+    table-layout: fixed;
+    width: 100%;
+
+    z-index: 100;           
+}
+
+.gantt .group.row left {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.gantt .group.row right {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.gantt .group.row .middleLabel,
+.gantt .group.row .groupMiddle {
+	overflow: visible;
+	position: relative;
+	padding-left: 0;
+	height: 1em;
+}
+
+.gantt .group.row .barContainer td:last-child *,
+.gantt .group.row .barContainer td:first-child * {
+    display: inline-block;
+}
+
+.gantt .row .barContainer td:first-child {
+    direction:rtl;
+}
+
+.gantt .spacer {
+    position: relative;
+    width: 0.24em;
+    height:1px;
+    z-index: 200;
+    visibility: hidden;
+}
+
+.gantt .group.row .barContainer .bar {  
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+    min-height:0 !important; 
+    overflow: visible;
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color:currentColor;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-bottom: 0.5em;
+    z-index: 0;
+    height: 0.35em;
+	left: -0.35em;
+    margin-left: -1px; 
+
+
+    padding-right: 0.85em;
+    width: 100%;
+
+    
+    border-bottom-left-radius:0px !important;
+    border-bottom-right-radius:0px !important;
+}
+
+.gantt .group.row .barContainer .bar .completed {
+    position: absolute;
+    top: 0px;
+    padding-left: 0.4em;
+    width: 30px;
+    height: 100%;
+    background-color: currentColor;
+}
+
+.gantt .group.row .ends {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+	right: -1px;
+    height: 1em;
+    z-index: 10;
+}
+
+.gantt .group.row .ends::before {
+    content: '';
+    display:block;
+    position: absolute;
+    top:-0.56em;
+    margin-top:-1px;
+
+
+    width:0.85em;
+    height:0.85em;
+
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+
+    border: 1px solid currentColor;
+}
+
+.gantt .group.row .ends.fillStart::before,
+.gantt .group.row .ends.fillEnd::after
+{
+    background-color: currentColor !important;
+}
+
+.gantt .group.row .ends::after {
+    content: '';
+    display:block;
+    position: absolute;
+    right:0;
+    top:-0.56em;
+    margin-top:-1px;
+
+
+    width:0.85em;
+    height:0.85em;
+
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+
+    border: 1px solid currentColor;
+}
+
+.gantt .group.row .barContainer.secondary {
+	padding-top: 10px;
+	padding-bottom: 0px;
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	z-index: 0;	
+}	
+		
+.gantt .group.row .barContainer.secondary .bar,
+.gantt .group.row .barContainer.secondary .ends::after,
+.gantt .group.row .barContainer.secondary .ends::before {
+	background-image: none;
+	filter: none;
+}
+
+.gantt .group.row .barContainer.secondary .bar {
+	border: none !important;
+	box-shadow: none !important;
+    background-image: none !important;
+}
+
+.gantt .group.row .barContainer.secondary .completed{
+    visibility: hidden;
+}
+
+.gantt .group.row .barContainer.secondary .referenceBar{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid currentColor;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+
+
+
+.gantt .ganttLines{
+    position: absolute;
+	width: 100%;
+	height: 100%;
+    top: 0px;
+	left: 0px;
+    z-index: 1;	
+	padding: 0;
+	margin: 0;
+}
+
+.gantt .ganttLine{
+	border-style: solid;
+	border-color: rgb(0, 0, 0);
+	border-width: 1px;
+}
+
+
+
+
+
+.gantt .milestone.row .barContainer .rhombContainer .middleLabel {
+    padding:0;
+}
+
+.gantt .milestone.row .barContainer .bar.completed {
+    background-color: currentColor;
+}
+
+.gantt .milestone.row .barContainer .rhombContainer .rhomb {
+    position:relative;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    transform:rotate(45deg);
+    height: 1em;
+    width: 1em;
+    left: -0.5em;
+
+    margin-top:    0.5ex;
+    margin-bottom: 0.5ex;
+}
+
+.gantt .milestone.row .barContainer .rhombContainer .rhomb .bar {
+    position:absolute;
+    border-color: currentColor;
+    border-radius:0;
+    width:100%;
+    height:100%;
+    min-height:0 !important; 
+}
+
+.gantt .milestone.row .barContainer .rhombContainer .rhomb .bar .completed {
+    position: absolute;
+       width: 100%;
+      height: 100%;
+}
+
+.gantt .milestone.row .barContainer.secondary .rhombContainer .rhomb .bar {
+    background-image: none;
+    filter: none;
+    box-shadow: none !important; 
+    border-style:solid;
+    width:100%;
+    height:100%;
+    left:0;
+    position:static;
+    overflow:hidden;
+    border:none !important;
+}
+
+.gantt .milestone.row .barContainer.secondary .rhombContainer .rhomb .bar .referenceBar {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position:absolute;
+    width:100%;
+    height:100%;
+    border: 1px solid currentColor;
+}
+
+
+.gantt .milestone.bar{
+    border-radius:0 !important;
+}
+
+.gantt .milestone.row .rhombContainer {
+    position:relative;
+    width:0;
+    vertical-align:middle;
+}
+
+.gantt .milestone.row .label .middleLabel{
+    padding:0;
+}
+
+.gantt .milestone.row .barContainer td:first-child *,
+.gantt .milestone.row .barContainer td:last-child * {
+    display: inline-block;
+}
+
+.gantt .milestone.row .barContainer td:first-child .spacer {
+    
+    float: right;
+}
+
+.gantt .milestone.row .barContainer td:last-child .spacer {
+    
+    float: left;
+}
+
+.gantt .milestone.row .barContainer td:first-child {
+    direction:rtl;
+}
+
+.gantt .milestone.row .spacer.middleLabel {
+    width: 0.75em;
+}
+
+
+
+
+
+.gantt .timePhase .timePhaseSubrow1,
+.gantt .timePhase .timePhaseSubrow2,
+.gantt .timePhase .timePhaseSubrow3 {
+    position: relative;
+    box-sizing: border-box;
+
+}
+
+
+.gantt .timePhase .hbox1 {
+    position:absolute;
+    background-color:rgba(0,255,0,0.5);
+    padding:0px !important;
+    box-sizing: border-box;
+}
+
+.gantt .timePhase .hbox1.flatTop {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+.gantt .timePhase .hbox2 {
+    position:absolute;
+    background-color:rgba(255,0,0,0.5);
+    padding:0px !important;
+    box-sizing: border-box;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom: 0px !important;
+}
+
+.gantt .timePhase .hlabel  {
+    position:absolute;
+
+    white-space:nowrap;
+    overflow:hidden;
+    bottom:0px;
+}
+
+.gantt .timePhase .hcontentlabel  {
+    background-color:pink;
+}
+
+.gantt .timePhase .hlabel div {
+    position:relative;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    white-space: nowrap;
+    overflow: hidden;
+    height:1.3em;
+    text-align:center;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
+
+.innerSubrow {
+    position:relative;
+    box-sizing: border-box;
+    height:100%;
+
+    
+}
+
+.gantt .timePhase .box,
+.timePhaseLabelsColumn .timePhase .box{
+    position: absolute;
+
+    background-color: lightgreen;
+    text-align: center;
+    white-space: nowrap;
+    background-repeat:no-repeat;
+    box-sizing:border-box;
+    border-color: currentcolor;
+
+
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+
+    height:100%;
+}
+
+
+
+.gantt .timePhase .box.invisible{
+    position: relative;
+    visibility: hidden;
+    height: auto;
+    width: 10px;
+    display: inline-block; 
+}
+
+.gantt .timePhase .box .tplabel{
+    height: auto;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    overflow-x:hidden;
+    position:relative;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+.gantt .timePhase .box.invisible .tplabel {
+    position:relative;
+    height: auto;
+    top: 0;
+    width: 0;
+}
+
+
+
+
+.timePhaseLabelsColumn.vertical.ruler {
+	position: relative;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border-right: 1px solid #9B9B9B;
+    overflow-x:scroll;
+}
+
+.timePhaseLabelsColumn.vertical.ruler .corner	{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border-top: 1px solid white;
+	border-bottom: 1px solid #9B9B9B;
+}		     	
+
+.timePhaseLabelsColumn.vertical.ruler .labelView {
+	min-width: 100%;
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: separate;
+	table-layout: fixed;
+	padding: 0px;
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView tr:nth-child(odd){
+	background-color: #FDFDFD;
+}	
+
+.timePhaseLabelsColumn.vertical.ruler .labelView tr:nth-child(even){
+	background-color: #F3F3F3;
+}	
+
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .histogram table {
+    height:100%;
+    width:100%;
+    text-align:right;
+    table-layout:fixed;
+    border-collapse:collapse;
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .histogram table tr{
+	background-color: transparent;
+    white-space:nowrap;
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .histogram table tr td:first-of-type{
+
+}
+
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .histogram table tr td:last-of-type{
+
+
+
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .histogram table tr td .tplabel{
+    text-align: right !important;
+    text-overflow:ellipsis;
+    overflow-x: hidden; 
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .histogram table tr td .tick {
+    position:absolute;
+    background-color: gray;
+    border-top: 1px solid gray;
+    width: 6px;
+    height:0px;
+    right:0px;
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .histogram table tr td .tickLabel {
+    position:absolute;
+    right:8px;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .histogram table tr td .tplabel.invisible {
+    padding-right:8px;
+    white-space:nowrap;
+}
+
+
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .timePhaseSubrow1,
+.timePhaseLabelsColumn.vertical.ruler .labelView .timePhaseSubrow2,
+.timePhaseLabelsColumn.vertical.ruler .labelView .timePhaseSubrow3{
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .box.visible {
+    padding-right:0.5em !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0px !important;
+    width:100%;
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .box.visible .tplabel {
+    text-align: right !important;
+    text-overflow:ellipsis;
+    overflow-x: hidden; 
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView .box.invisible {
+    position: relative;
+    visibility: hidden;
+    height: auto;
+    width: 10px;
+    display: inline-block;
+}
+
+.timePhaseLabelsColumn.vertical.ruler .labelView td.hidden {
+    padding:0px;
+}
+
+.invisible {
+    visibility:hidden;
+}
+
+
+
+
+
+.textWrapper {
+    display:inline-block;
+}
