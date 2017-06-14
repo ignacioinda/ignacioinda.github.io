@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>autoSavePoint</key>
+	<key>openPoint</key>
 	<dict>
 		<key>reversionPoints</key>
 		<dict>
@@ -11,12 +11,12 @@
 				<key>masterBranch</key>
 				<dict>
 					<key>baseHistoryDigest</key>
-					<string>VAI_g1lHkcYZdKWfqyQKpbT-gd0</string>
+					<string>2MkeYGxzWoeQlFhQtGV1uyYNsT4</string>
 				</dict>
 			</dict>
 		</dict>
 		<key>timestamp</key>
-		<date>2017-05-18T18:45:03Z</date>
+		<date>2017-06-14T20:59:59Z</date>
 	</dict>
 	<key>savePoint</key>
 	<dict>
@@ -27,12 +27,12 @@
 				<key>masterBranch</key>
 				<dict>
 					<key>baseHistoryDigest</key>
-					<string>PWv4saStE1RBINvBxwK0BLlWNM8</string>
+					<string>q9xYp0DZXs3C924GcWM1tHYPlug</string>
 				</dict>
 			</dict>
 		</dict>
 		<key>timestamp</key>
-		<date>2017-05-18T18:42:26Z</date>
+		<date>2017-06-14T21:01:40Z</date>
 	</dict>
 	<key>userNames</key>
 	<dict>

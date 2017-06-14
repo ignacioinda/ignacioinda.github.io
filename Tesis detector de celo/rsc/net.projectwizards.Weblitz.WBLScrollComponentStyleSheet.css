@@ -1,0 +1,46 @@
+
+
+.scrollview {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.scrollview .horizontal.ruler {
+    overflow: hidden;	
+}
+
+.scrollview .vertical.ruler {
+    float: left;
+    height: 100%;
+    overflow: hidden; 	
+    position: relative;
+    width: 150px;		
+}
+
+.scrollview .vertical.ruler .content{
+    overflow: hidden;    
+}
+
+.scrollview .vertical.ruler .corner{
+	position:  relative;
+
+    height: 20px;			 
+    width: 100%;
+}
+
+.scrollview .main.content {
+    overflow-y: auto;	
+    position: relative;
+}
+
+.scrollview .contentIFrame {
+    overflow-y: auto;	
+    position: relative;
+    width:100%;
+    height:100%;
+}
+
+.scrollview .iFrameWrapper {
+    overflow-x: hidden;
+}
